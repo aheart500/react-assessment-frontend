@@ -24,7 +24,11 @@ const  App = () => {
   },[dispatch])
 
   if(loading){
-    return <Loader />
+    return (
+      <div className='loader-container'>
+        <Loader />
+      </div>
+    )
   }
 
   return (

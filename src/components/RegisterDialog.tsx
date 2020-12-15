@@ -71,7 +71,7 @@ const validate = (values:any) => {
   return errors;
 }
 const RegisterDialog = ({open, toggleState}: {open: boolean, toggleState: ()=> void}) =>  {
-  const [loading,setLoading] = useState(true)
+  const [loading,setLoading] = useState(false)
   const [image, setImage] = useState()
     const formik = useFormik({
         initialValues: {
