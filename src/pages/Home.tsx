@@ -33,6 +33,7 @@ const Home = () => {
     const [filter, setFilter] = useState<FilterState>({categories: [], tags: []})
     useEffect(()=>{
       getPosts().then(res=> {
+        setPosts(res)
       }).catch(err=> console.log(err))
     },[])
     
@@ -46,8 +47,6 @@ const Home = () => {
         const matchTags = filter.tags.length === 0 || filter.tags.find(tag=> post.tags?.includes(tag)) !== undefined
         return matchCategory && matchTags
       }) 
- 
-
     return (
         <>
         <MyAppBar />
